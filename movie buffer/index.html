@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Buff Central</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+</head>
+<body style="background-color: rgb(24, 21, 21);">
+    <header>
+        <video autoplay muted loop id="header-video">
+            <source src="bg/bg1.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <nav>
+            <div class="logo_ul">
+                <img src="image/—Pngtree—movie board icon_4751062.png" alt="Movie Logo" class="logo">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Series</a></li>
+                    <li><a href="index.html">Movie</a></li>
+                    <li><a href="index.html">Kids</a></li>
+                </ul>
+            </div>
+            <div class="container">
+                <h5>Movie Trivia Quiz</h5>
+                <div class="quiz">
+                    <div class="question" id="question-container">
+                        <h4 id="question-text">Select a movie to start the quiz.</h4>
+                        <div class="options" id="options-container">
+                            <!-- Options will be dynamically generated here -->
+                        </div>
+                    </div>
+                    <div class="result" id="result-container">
+                        <h3 id="result-text"></h3>
+                        <button onclick="nextQuestion()" class="next-btn" style="display: none;">Next Question</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="content">
+            <h1 id="title" style="font-family: 'Arial', sans-serif;  font-weight: bold;">
+                Welcome to the Movie Fan Page!
+            </h1>
+            <div class="homepage"> Welcome to the ultimate hub for fans of <strong>Popular Movie</strong>!
+                 Here, you can immerse yourself in the captivating world of your favorite film, uncover
+                  intriguing details, and connect with fellow enthusiasts. Explore fun facts about the
+                   movie and test your knowledge with our exciting quiz, all dedicated to celebrating this
+                    cinematic masterpiece! </i></div>
+          <p><i></p>
+          <div class="detail">
+            <h6>Nexflix</h6>
+            <h5 id="gen">Thriller</h5>
+            <h4>2021</h4>
+            <h3 id="rate"><spam>IMDB</spam><i class="bi bi-star">9.6</i>
+            </h3>
+          </div>
+          <div class="btns">
+            <a href="#" id="play">Watch <i class="bi bi-play-btn-fill"></i></a>
+            <a href="#" id="cut">Cut <i class="bi bi-stop-fill"></i></a>
+            <a id="Fact"><i class="bi bi-chat-left-quote-fill"></i></a>
+            
+           <!-- Fact Display Section -->
+         <div id="fact-display" style="display: none; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); padding: 10px; background-color: rgba(0, 0, 0, 0.7); border-radius: 8px; color: #fff; font-size: 16px; max-width: 300px; text-align: center; z-index: 1000;"></div>
+
+
+        </div>
+        </div>
+          <!-- Trailer Iframe -->
+        
+          <iframe id="trailer" class="trailer" width="100%" height="100%" style="position: absolute; top: 0; left: 0; z-index: 1; display: none;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <button id="cut-button" style="display: none; position: absolute; top: 10px; right: 10px; z-index: 2;" onclick="cutVideo()">Cut</button>
+        <section>
+            <h4>Popular Movies</h4>
+            <div class="cards">
+                <a href="#" class="card">
+                    
+                <img src="image/avengers.jpg" alt="" class="poster">
+                <div class="cont">
+                    <h4>Avengers</h4>
+                    <div class="sub">
+                        <p>Action, Adventure, Sci-Fi </p>
+                        <h3><spam>IMDB</spam><i class="bi bi-star">8.2</i></h3>
+                    </div>
+                </div>
+                </a>
+                <a href="#" class="card">
+                    
+                    <img src="image/batman.jpg" alt="" class="poster">
+                    <div class="cont">
+                        <h4>The Dark Knight</h4>
+                        <div class="sub">
+                            <p>Action, Crime, Dram </p>
+                            <h3><spam>IMDB</spam><i class="bi bi-star">8.5</i></h3>
+                        </div>
+                    </div>
+                    </a>
+                    <a href="#" class="card">
+                    
+                        <img src="image/dune.jpg" alt="" class="poster">
+                        <div class="cont">
+                            <h4>Dune</h4>
+                            <div class="sub">
+                                <p> Adventure, Drama, Sci-Fi </p>
+                                <h3><spam>IMDB</spam><i class="bi bi-star">7.7</i></h3>
+                            </div>
+                        </div>
+                        </a>
+                        <a href="#" class="card">
+                    
+                            <img src="image/spiderman.jpg" alt="" class="poster">
+                            <div class="cont">
+                                <h4>Spiderman</h4>
+                                <div class="sub">
+                                    <p> Adventure, Drama, Sci-Fi </p>
+                                    <h3><spam>IMDB</spam><i class="bi bi-star">7.3</i></h3>
+                                </div>
+                            </div>
+                            </a>
+                            <a href="#" class="card">
+                    
+                                <img src="image/avatar.jpg" alt="" class="poster">
+                                <div class="cont">
+                                    <h4>Avatar</h4>
+                                    <div class="sub">
+                                        <p> Adventure, Drama, Sci-Fi </p>
+                                        <h3><spam>IMDB</spam><i class="bi bi-star">7.5</i></h3>
+                                    </div>
+                                </div>
+                                </a>
+                                <a href="#" class="card">
+                    
+                                    <img src="image/johnwick.jpg" alt="" class="poster">
+                                    <div class="cont">
+                                        <h4>John Wick</h4>
+                                        <div class="sub">
+                                            <p> Adventure, Drama, Sci-Fi </p>
+                                            <h3><spam>IMDB</spam><i class="bi bi-star">8.1</i></h3>
+                                        </div>
+                                    </div>
+                                    </a> 
+                        
+                           
+                                    
+               </div>                      
+        </section>
+    </header>
+ <script src="script.js"></script>
+ <script src="quiz.js"></script>
+ <script src="trailer.js"></script>
+</body>
+</html>
